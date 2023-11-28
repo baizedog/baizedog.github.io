@@ -16,17 +16,23 @@
   <meta name="author" content="HermitLee">
   <meta name="keywords" content="">
   
-    <meta property="og:type" content="website">
-<meta property="og:title" content="标签">
-<meta property="og:url" content="http://example.com/tags/index.html">
+    <meta name="description" content="生活百般滋味，人生需要笑对。   MySQL 基本名词对于数据库，首先了解几个名词：  元组：表中的一行就是一个元组。 码：唯一标识实体的属性，对应一列 候选码：能标识实体的不可分割的属性或属性组的集合 主键：只能有一个，不能为null不能重复 外键：可以有多个，可以为null也可以重复 主属性：候选码中出现过的属性就是主属性 非主属性：候选码中没出现过的好就是非主属性  ER图在设计一个数据库的">
+<meta property="og:type" content="website">
+<meta property="og:title" content="数据库基础">
+<meta property="og:url" content="http://example.com/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%9F%BA%E7%A1%80/index.html">
 <meta property="og:site_name" content="HermitLee的小屋">
+<meta property="og:description" content="生活百般滋味，人生需要笑对。   MySQL 基本名词对于数据库，首先了解几个名词：  元组：表中的一行就是一个元组。 码：唯一标识实体的属性，对应一列 候选码：能标识实体的不可分割的属性或属性组的集合 主键：只能有一个，不能为null不能重复 外键：可以有多个，可以为null也可以重复 主属性：候选码中出现过的属性就是主属性 非主属性：候选码中没出现过的好就是非主属性  ER图在设计一个数据库的">
 <meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2023-11-28T02:10:51.000Z">
+<meta property="article:modified_time" content="2023-11-28T03:05:57.382Z">
 <meta property="article:author" content="HermitLee">
+<meta property="article:tag" content="数据库">
+<meta property="article:tag" content="MySQL">
 <meta name="twitter:card" content="summary_large_image">
   
   
   
-  <title>标签 - HermitLee的小屋</title>
+  <title>数据库基础 - HermitLee的小屋</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -84,7 +90,7 @@
   <header>
     
 
-<div class="header-inner" style="height: 80vh;">
+<div class="header-inner" style="height: 60vh;">
   <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
   <div class="container">
     <a class="navbar-brand" href="/">
@@ -190,17 +196,13 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="标签"></span>
+            <span id="subtitle" data-typed-text="数据库基础"></span>
           
         </div>
 
         
       </div>
 
-      
-        <div class="scroll-down-bar">
-          <i class="iconfont icon-arrowdown"></i>
-        </div>
       
     </div>
   </div>
@@ -221,9 +223,45 @@
               <div class="col-12 col-md-10 m-auto">
                 
 
-<div class="text-center tagcloud">
-  <a href="/tags/MySQL/" style="font-size: 15px; color: #bbe">MySQL</a> <a href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/" style="font-size: 15px; color: #bbe">数据库</a>
-</div>
+<article class="page-content">
+  <p>生活百般滋味，人生需要笑对。</p>
+<blockquote>
+</blockquote>
+<h2 id="MySQL-基本名词"><a href="#MySQL-基本名词" class="headerlink" title="MySQL 基本名词"></a>MySQL 基本名词</h2><p>对于数据库，首先了解几个名词：</p>
+<ul>
+<li>元组：表中的一行就是一个元组。</li>
+<li>码：唯一标识实体的属性，对应一列</li>
+<li>候选码：能标识实体的不可分割的属性或属性组的集合</li>
+<li>主键：只能有一个，不能为null不能重复</li>
+<li>外键：可以有多个，可以为null也可以重复</li>
+<li>主属性：候选码中出现过的属性就是主属性</li>
+<li>非主属性：候选码中没出现过的好就是非主属性</li>
+</ul>
+<h2 id="ER图"><a href="#ER图" class="headerlink" title="ER图"></a>ER图</h2><p>在设计一个数据库的开始，我们首先要厘清关系，便要用到ER图</p>
+<p>ER图的全称是Entity Relationship Diagram（实体联系图），用来表示实体之间的关系以及实体的属性。</p>
+<p>实体：通常用矩形表示，是业务中的对象。</p>
+<p>关系：通常用菱形表示，构成实体与实体之间的联系。</p>
+<p>属性：通常用椭圆表示，用来描述实体的组成。</p>
+<h2 id="数据库范式"><a href="#数据库范式" class="headerlink" title="数据库范式"></a>数据库范式</h2><p>在我看来可以简单的理解为：</p>
+<ul>
+<li>第一范式：属性不可再分（即没有可分割的字段，这也是最基本的要求）</li>
+<li>第二范式：在满足第一范式的基础上，消除了部分函数依赖（即主键的整体才能确定非主属性，只能有一个标志）</li>
+<li>第三范式：在满足第二范式的基础上，消除了传递函数依赖</li>
+</ul>
+<h3 id="数据库依赖"><a href="#数据库依赖" class="headerlink" title="数据库依赖"></a>数据库依赖</h3><ul>
+<li>函数依赖：在一个表中，X可以确定唯一的Y，那么就称Y依赖X。</li>
+<li>部分函数依赖：对于X -&gt; Y，X中有一个真子集X0满足X0 -&gt; Y，那么我们就称Y部分函数依赖X。</li>
+<li>完全函数依赖：对于X -&gt; Y，但如果只知道X中的一部分是不能确定唯一的Y，那么Y就是完全函数依赖X。</li>
+<li>传递函数依赖：X -&gt; Y -&gt; Z，那么Z传递函数依赖X。</li>
+</ul>
+<h2 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h2><p>对于数据库设计，一般我们需要先分析用户的需求，从数据，功能和性能上去剖析。随后我们应该用ER图来厘清数据之间的逻辑关系，将ER转为表结构。</p>
+
+
+  
+
+</article>
+
+
 
               </div>
             </div>
